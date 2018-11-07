@@ -1,0 +1,7 @@
+ <ul >
+    <li *ngFor="let menuItem of menuItems" [ngClass]="{'active': menuItem?.active}">
+      <span><app-menu-item [title]="menuItem?.title" (click)="emitChild(menuItem?.title)"></app-menu-item></span>
+    </li>
+ </ul>
+
+

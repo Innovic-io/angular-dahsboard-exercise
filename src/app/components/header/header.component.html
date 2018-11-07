@@ -1,0 +1,15 @@
+<header>
+  <div class="row align-items-center my-header">
+    <div class="col-3 logoSearch">
+      <app-logo logoUrl="../../../assets/images/logo.svg"></app-logo>
+      <app-search class="searchAlign"></app-search>
+    </div>
+    <div class="col-6">
+      <app-menu [menuItems]="menuItems" (msgEvent)="receiveValue($event)"></app-menu>
+    </div>
+    <div class="col-3 notification justify-content-end">
+      <app-notification notificationLogo="../../../assets/images/icon_notification.svg" [notificationNumber]="3"></app-notification>
+      <app-profile profileUrl="../../../assets/images/icon_profile.svg"></app-profile>
+    </div>
+  </div>
+</header>

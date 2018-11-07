@@ -1,0 +1,30 @@
+<div class="p-lg-3 p-md-2 p-sm-1">
+  <div class="row justify-content-between align-items-center mt-4">
+    <div class="title pl-3">{{title}}</div>
+    <div class="dateCol pr-3">{{myDate | date:'medium'}}</div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 col-sm-12">
+      <app-chart-line (useLineChart)="initLineChart($event)"></app-chart-line>
+    </div>
+    <div class="col-md-4  col-sm-12">
+      <app-chart-pie (usePieChart)="initPieChart($event)"></app-chart-pie>
+    </div>
+  </div>
+  <div class="row pt-md-3">
+    <div class="col-lg-3 col-md-6 col-sm-12" *ngFor="let cardItem of cardItems">
+      <app-dashboard-card-items [cardItem]="cardItem"></app-dashboard-card-items>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 col-sm-12 strCol">
+      <app-documents [documentItems]="documentItems"></app-documents>
+    </div>
+    <div class="col-md-4 col-sm-12 strCol">
+      <app-active-users></app-active-users>
+    </div>
+    <div class="col-md-4 col-sm-12 strCol">
+      <app-calendar></app-calendar>
+    </div>
+  </div>
+</div>

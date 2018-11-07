@@ -1,0 +1,13 @@
+.badgeDecor {
+  color:white;
+  background-color: #5E77FF;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.badge {
+   margin: 0px 5px 15px 5px;
+}
+.badgeNotification {
+  display: flex;
+}

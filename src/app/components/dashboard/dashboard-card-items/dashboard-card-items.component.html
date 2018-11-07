@@ -1,0 +1,19 @@
+<div class="bg-white mt-lg-3 mt-md-3 mt-2 ">
+  <div class="row flex-nowrap p-4">
+    <div class="col-10">
+      <div class="value">
+        <ng-container *ngIf="cardItem?.currency; else nocurrency">{{cardItem?.itemValue | currency}}M</ng-container>
+        <ng-template #nocurrency>
+          {{cardItem?.itemValue}}
+          <ng-container *ngIf="cardItem?.isProject">+</ng-container>
+        </ng-template>
+      </div>
+      <div class="textSize">
+        {{cardItem?.title}}
+      </div>
+    </div>
+    <div class="col-2">
+      <img class="images" src="{{cardItem?.picture}}">
+    </div>
+  </div>
+</div>

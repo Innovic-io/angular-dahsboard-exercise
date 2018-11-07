@@ -1,0 +1,18 @@
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+
+@Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'app-card-title',
+  templateUrl: './card-title.component.html',
+  styleUrls: ['./card-title.component.css']
+})
+export class CardTitleComponent implements OnInit {
+
+  @Input() cardTitle: string;
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}

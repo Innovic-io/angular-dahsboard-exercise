@@ -1,0 +1,73 @@
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.calendar {
+  display: flex;
+  justify-content: center;
+}
+.calendar thead {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.calendar tbody {
+  color: #7c8a95;
+}
+
+.calendar tbody td:hover {
+  border: 2px solid #00addf;
+}
+
+.calendar td {
+  border: 2px solid transparent;
+  border-radius: 50%;
+  display: inline-block;
+  height: 3em;
+  line-height: 3em;
+  text-align: center;
+  width: 3em;
+}
+
+.calendar .prev-month,
+.calendar .next-month {
+  color: #cbd1d2;
+}
+
+.calendar .prev-month:hover,
+.calendar .next-month:hover {
+  border: 2px solid #cbd1d2;
+}
+
+.current-day {
+  background: #00addf;
+  color: #f9f9f9;
+}
+
+.event {
+  cursor: pointer;
+}
+
+.event.current-day:after {
+  background: #f9f9f9;
+}
+
+.calendar > table > thead .row , .calendar > table > tbody .row {
+  margin: 0;
+}
+
+.colHeight {
+  height: 95%;
+}
+
+@media screen and (max-width: 570px){
+  table { font-size: 10px;}
+}
+@media screen and (min-width: 760px) {
+  table { font-size: 10px; }
+}
+@media screen and (min-width: 1140px) {
+  table { font-size: 15px; }
+
+}

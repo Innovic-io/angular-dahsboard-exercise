@@ -1,0 +1,15 @@
+<div class="bg-white mt-4 colHeight">
+  <div class="row">
+    <div class="col-12 pl-lg-5 pl-md-3">
+     <app-card-title [cardTitle]="'Recent Documents'"></app-card-title>
+    </div>
+    <div class="col-12 m-2">
+      <ul>
+        <li class="p-2" *ngFor="let documentItem of documentItems">
+          <div>{{documentItem?.title}}</div>
+          <div class="textColor">{{documentItem?.date}}</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

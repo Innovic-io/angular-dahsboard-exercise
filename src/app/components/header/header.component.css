@@ -1,0 +1,16 @@
+.my-header {
+  background: #FFFFFF;
+  color: rgba(43, 48, 52, 0.4);
+}
+
+.logoSearch{
+  display: flex;
+}
+.searchAlign {
+  align-self: center;
+  padding-left: 10px;
+}
+.notification {
+   display: flex;
+}
+
