@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MENUITEMS } from '../../mock-data/mock-menu-items';
 
 @Component({
@@ -7,6 +7,7 @@ import { MENUITEMS } from '../../mock-data/mock-menu-items';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  @Input() notifications: number;
 
   menuItems = MENUITEMS;
 

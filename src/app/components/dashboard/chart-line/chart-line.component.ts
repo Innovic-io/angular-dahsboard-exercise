@@ -1,13 +1,11 @@
 import {
-  AfterViewInit,
-  ChangeDetectionStrategy,
-  Component,
-  ElementRef,
-  EventEmitter,
-  Output,
-  ViewChild
+    ChangeDetectionStrategy,
+    Component,
+    ElementRef,
+    Input,
+    ViewChild
 } from '@angular/core';
-
+import * as Chart from 'chart.js';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -15,14 +13,22 @@ import {
   templateUrl: './chart-line.component.html',
   styleUrls: ['./chart-line.component.css']
 })
-export class ChartLineComponent implements AfterViewInit {
-
-  @Output() useLineChart = new EventEmitter<ElementRef>();
+export class ChartLineComponent {
 
   @ViewChild('lineChart') lineChart: ElementRef;
 
-  ngAfterViewInit() {
-
-    this.useLineChart.emit(this.lineChart);
+  @Input() set chartData(data) {
+    if (data) {
+        const ctx = this.lineChart.nativeElement.getContext('2d');
+        // tslint:disable-next-line
+        new Chart(ctx, {
+            type: 'line',
+            data: data,
+            options: {
+                responsive: true,
+                legend: {display: false}
+            }
+        });
+    }
   }
 }

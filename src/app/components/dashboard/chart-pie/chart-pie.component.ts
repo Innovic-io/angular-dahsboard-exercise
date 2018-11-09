@@ -1,12 +1,11 @@
-import { AfterViewInit,
-  ChangeDetectionStrategy,
-  Component,
-  ElementRef,
-  Output,
-  ViewChild,
-  EventEmitter
+import {
+    ChangeDetectionStrategy,
+    Component,
+    ElementRef,
+    Input,
+    ViewChild
 } from '@angular/core';
-
+import * as Chart from 'chart.js';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -14,12 +13,21 @@ import { AfterViewInit,
   templateUrl: './chart-pie.component.html',
   styleUrls: ['./chart-pie.component.css']
 })
-export class ChartPieComponent implements AfterViewInit {
+export class ChartPieComponent {
 
-  @Output() usePieChart = new EventEmitter<ElementRef>();
   @ViewChild('pieChart') pieChart: ElementRef;
 
-  ngAfterViewInit() {
-    this.usePieChart.emit(this.pieChart);
+  @Input() set chartData(data) {
+    if (data) {
+       const ctx = this.pieChart.nativeElement.getContext('2d');
+        // tslint:disable-next-line
+       new Chart(ctx, {
+           type: 'pie',
+           data: data,
+           options: {
+               responsive: true
+           }
+       });
+  }
   }
 }

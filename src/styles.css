@@ -1,9 +1,33 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import '~font-awesome/css/font-awesome.css';
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
 @import url('https://fonts.googleapis.com/css?family=Lato');
-
 
 body {
   background-color: #F2F2F2;
   font-family: 'Lato', sans-serif;
 }
+.cal-month-view .cal-days {
+  border: none;
+  pointer-events: none;
+}
+.cal-month-view .cal-days .cal-cell-row {
+  border: none;
+  font-size: 15px;
+  padding: 0 15px;
+}
+.cal-month-view .cal-day-cell {
+  min-height: 55px;
+}
+.cal-month-view .cal-cell-top {
+  min-height: 55px;
+}
+.cal-month-view .cal-day-cell:not(:last-child) {
+  border: none;
+}
+.cal-month-view .cal-header {
+  font-weight: lighter;
+  padding: 5px 15px 0 15px;
+  pointer-events: none;
+}
+

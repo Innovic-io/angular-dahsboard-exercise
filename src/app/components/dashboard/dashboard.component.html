@@ -5,10 +5,10 @@
   </div>
   <div class="row">
     <div class="col-md-8 col-sm-12">
-      <app-chart-line (useLineChart)="initLineChart($event)"></app-chart-line>
+      <app-chart-line [chartData]="inlineChart"></app-chart-line>
     </div>
     <div class="col-md-4  col-sm-12">
-      <app-chart-pie (usePieChart)="initPieChart($event)"></app-chart-pie>
+      <app-chart-pie [chartData]="pieChart"></app-chart-pie>
     </div>
   </div>
   <div class="row pt-md-3">
